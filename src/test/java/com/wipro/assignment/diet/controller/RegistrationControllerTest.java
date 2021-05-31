@@ -46,8 +46,8 @@ public class RegistrationControllerTest {
 	@Mock
 	private RegistrationService registrationService;
 	
-	@Captor
-	ArgumentCaptor<List<AssessmentAnswer>> answerArgumentCaptor;
+	//@Captor
+	//ArgumentCaptor<List<AssessmentAnswer>> answerArgumentCaptor;
 	//mvn verify-DskipTests=true -DwithHistory org.pitest:pitest-maven:mutationCoverage
 
 	@BeforeEach
