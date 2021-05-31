@@ -1,0 +1,45 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /assignment
+  
+#logging:
+#  level:
+#    root: info
+#    org.hibernate.SQL: debug
+#    org.hibernate.type.descriptor.sql: trace
+
+
+spring:
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+      path: /admin/h2
+
+  datasource:
+    #url: jdbc:h2:mem:emp;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS emp\;RUNSCRIPT FROM 'classpath:database/h2/calendar-schema.sql'\;SET SCHEMA emp
+    #url: jdbc:h2:mem:dataSource;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:assignment;INIT= create schema if not exists assignment\;
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect  
+    #hibernate.ddl-auto: none
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
+  mail:
+    host: smtp.gmail.com
+    username:
+    password:
+
+welcome:
+  message: Hello Wipro
+jwt:
+  secret: mydiet
+  
