@@ -106,10 +106,10 @@ public class ChallengerControllerTest {
 		measurementVO.setWaist(1.5F);
 		measurementVO.setWeight(110.0F);
 		
-		mockMvc.perform(MockMvcRequestBuilders.post("/diet/postmeasurement").accept(MediaType.APPLICATION_JSON)
+		mockMvc.perform(MockMvcRequestBuilders.post("/diet/postmeasurement/2").accept(MediaType.APPLICATION_JSON)
 				.header("Authorization", token).content(mapper.writeValueAsBytes(measurementVO))
-				.contentType(MediaType.APPLICATION_JSON));
-				//.andExpect(status().isNoContent());
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isNoContent());
 		
 		DailyLogVO dailyLogVO = new DailyLogVO();
 		dailyLogVO.setBreakfast("TEA");

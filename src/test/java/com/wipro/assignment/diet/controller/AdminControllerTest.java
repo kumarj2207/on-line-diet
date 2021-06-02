@@ -152,29 +152,17 @@ public class AdminControllerTest {
 			assertThat(vo.getRegistrations().size()).isEqualTo(0);
 	//	});
 
-		List<Approval> list = new ArrayList<>();
 		Approval approval = new Approval();
 		approval.setEmail("rajeev@gmail.com");
 		approval.setApproved(true);
 		approval.setBatch(1L);
-
-		list.add(approval);
-
-		approval = new Approval();
-		approval.setEmail("roger@gmail.com");
-		approval.setApproved(false);
-		approval.setRejectionReason("XYZ");
-
-		list.add(approval);
-		ApprovalVO approvalVO = new ApprovalVO();
-		approvalVO.setList(list);
 		
 		requestBuilder = MockMvcRequestBuilders.post("/diet/approval").accept(MediaType.APPLICATION_JSON)
-				.header("Authorization", token).content(mapper.writeValueAsBytes(approvalVO))
+				.header("Authorization", token).content(mapper.writeValueAsBytes(approval))
 				.contentType(MediaType.APPLICATION_JSON);
 
 		action = mockMvc.perform(requestBuilder);
-		//action.andExpect(status().isNoContent());
+		action.andExpect(status().isNoContent());
 		
 		MessageVO messageVO = new MessageVO();
 		messageVO.setMessage("Test Message");
