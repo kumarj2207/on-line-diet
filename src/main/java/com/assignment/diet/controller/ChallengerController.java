@@ -33,7 +33,7 @@ import com.assignment.diet.vo.MeasurementVO;
 
 @Controller
 @RequestMapping("/diet")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("https://online-diet-app.herokuapp.com/")
 public class ChallengerController {
 
 	@Autowired
