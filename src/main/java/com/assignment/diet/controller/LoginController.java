@@ -22,7 +22,7 @@ import com.assignment.diet.vo.UserDto;
 
 @Controller
 @RequestMapping("/diet")
-@CrossOrigin("http://online-diet-app.herokuapp.com/")
+//@CrossOrigin("http://online-diet-app.herokuapp.com/")
 public class LoginController {
 
 	@Autowired
