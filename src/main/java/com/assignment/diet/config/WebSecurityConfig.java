@@ -48,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 // "/assignment/authenticate","/assignment/diet/registration", "/assignment/admin/h2"
 		//
-		httpSecurity.csrf().disable().authorizeRequests()
+		httpSecurity.cors().and().csrf().disable().authorizeRequests()
 		.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 				.antMatchers("/authenticate", "/register", "/admin/**", "/diet/registration", "/diet/login")
 				.permitAll().anyRequest().authenticated().and().exceptionHandling()
